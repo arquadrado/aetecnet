@@ -1,0 +1,174 @@
+body {
+	font-family: 'Helvetica', sans-serif;
+}
+
+.container {
+	width: 100%;
+	padding: 0;
+}
+
+.content-1 img {
+	width: 100%;
+	height: auto;
+
+}
+
+.slide {
+	position: relative;
+}
+.about-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-size: 42px;
+	text-align: center;
+	line-height: 1.3em;
+	color: #aaa;
+	height: 450px;
+	width: 80%;
+	margin: auto;
+}
+
+.about-wrapper h3 {
+	line-height: 1.8em;
+}
+
+
+
+.navbar {
+	border: 0;
+}
+
+.navbar > .container .navbar-brand {
+    margin-left: 15px;
+ }
+
+.navbar .nav > .active > a {
+    background:none;
+    border-bottom: 3px solid #540909;
+    transition: 300ms easy-out;
+}
+
+/*-------projects-------*/
+.row {
+	height: 33%;
+}
+
+.row > div {
+	height: 100%;
+}
+.frame {
+	height: 150px;
+	width: 150px;
+	background-color: red;
+	position: absolute;
+    
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+
+.test {
+	background-color: red;
+	height: 100px;
+	width: 100px;
+}
+
+.test2 {
+	background-color: yellow;
+	height: 100px;
+	width: 100px;
+}
+
+.test3 {
+	background-color: white;
+	height: 50px;
+	width: 100px;
+}
+
+body {
+      -webkit-font-smoothing: antialiased;
+      font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #aaa;
+      padding-top:70px;
+    }
+
+
+
+    .navbar {
+      overflow: hidden
+    }
+
+    .section .fp-section .active {
+      height: 500px;
+    }
+
+    /*fuking more tests*/
+    
+    .slide-container {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+.slide-btns-container {
+  height: 50px;
+  width: 200px;
+  margin: auto;
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.slide-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.rect1 {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  margin: auto;
+}
+
+.rect2 {
+  height: 150px;
+  width: 150px;
+  background-color: yellow;
+  margin: auto;
+}
+
+.rect3 {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+
+	@media only screen 
+	  and (min-device-width: 768px) 
+	  and (max-device-width: 1024px) 
+	  and (-webkit-min-device-pixel-ratio: 2) {
+		.about-wrapper {
+
+		}
+	}
+	@media only screen 
+  	and (min-device-width: 320px) 
+ 	 and (max-device-width: 480px)
+  	and (-webkit-min-device-pixel-ratio: 2) {
+		.about-wrapper h3 {
+			font-size: 12px;
+		}
+	}
+
+}
