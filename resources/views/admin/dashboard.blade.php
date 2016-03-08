@@ -1,4 +1,6 @@
 @extends('layouts.master')
+
+@section('content')
     <div class="container">
         <div class="login">
             <form action="test" method="post" enctype="multipart/form-data">
@@ -9,3 +11,4 @@
             </form><!-- /form -->
         </div><!-- /card-container -->
     </div><!-- /container -->
+@stop
