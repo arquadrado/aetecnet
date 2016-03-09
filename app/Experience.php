@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Experience extends Model
 {
-     public function member()
+    public function member()
     {
         return $this->belongsTo('App\Member');
     }
