@@ -1,31 +1,35 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', ], function()
-{
-	Route::get('/', [
-		'as'   => 'admin',
-		'uses' => 'LoginController@dashboard',
-	]);
+Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/login', [
 		'as'   => 'login',
-		'uses' => 'LoginController@login'
+		'uses' => 'Admin\LoginController@login'
 	]);
 
 	Route::post('/login', [
 		'as'   => 'post_login',
-		'uses' => 'LoginController@authenticate'
+		'uses' => 'Admin\LoginController@authenticate'
 	]);
 
-	Route::get('test', [
-		'as'   => 'test',
-		'uses' => 'DashboardController@show'
-	]);
+	Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function()
+	{
+		Route::get('/', [
+			'as'   => 'admin',
+			'uses' => 'LoginController@dashboard',
+		]);
 
-	Route::post('test', [
-		'as'   => 'test_post',
-		'uses' => 'DashboardController@submit'
-	]);
+		Route::get('test', [
+			'as'   => 'test',
+			'uses' => 'DashboardController@show'
+		]);
+
+		Route::post('test', [
+			'as'   => 'test_post',
+			'uses' => 'DashboardController@submit'
+		]);
+
+	});
 
 });
 

@@ -1,9 +1,12 @@
 @extends('layouts.master')
+
+@section('content')
     <div class="container">
         <div class="login">
             <form class="form-signin" method="post">
+                {{ csrf_field() }}
                 <span id="reauth-email" class="reauth-email"></span>
-                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" value="{{ old('email') }}" required autofocus>
                 <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
@@ -17,3 +20,4 @@
             </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
+@stop
