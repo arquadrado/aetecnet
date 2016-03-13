@@ -22,7 +22,6 @@ class LoginController extends Controller
         $requestData = request()->all();
         $email = $requestData['email'];
         $password = $requestData['password'];
-
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             return redirect()->intended('admin');
         }

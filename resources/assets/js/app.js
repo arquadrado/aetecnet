@@ -395,4 +395,3 @@ $(document).ready(function() {
       columnWidth: 200
     });
 });
-//# sourceMappingURL=app.js.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin.scss"],"names":[],"mappings":"AAGA;EACC,sBAAsB;EACtB,oBAAoB,EAKpB;EAPD;IAKE,wBAAwB,EACxB","file":"admin.css","sourcesContent":["body {\n}\n\n.container-fluid {\n\tborder: 1px solid red;\n\tmargin: 100px 100px;\n\n\t.row {\n\t\tborder: 1px solid green;\n\t}\n}"],"sourceRoot":"/source/"}

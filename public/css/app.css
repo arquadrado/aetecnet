@@ -1,402 +1,92 @@
-/*-------navbar-------*/
-.navbar-inverse {
-  border-bottom: 1px solid #614A4A; }
-  .navbar-inverse .navbar-nav > .active > a,
-  .navbar-inverse .navbar-nav > .active > a:focus,
-  .navbar-inverse .navbar-nav > .active > a:hover {
-    background-color: #614A4A; }
-  .navbar-inverse .navbar-brand {
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 3em;
-    font-weight: bold; }
-  .navbar-inverse .navbar-collapse a {
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 1.6em; }
-
-.dropdown-menu {
-  border-radius: 0;
-  background-color: #111;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 10px; }
-  .dropdown-menu li a {
-    color: #ccc; }
-
-/*-------navbar-end-------*/
-.red {
-  height: 200px;
-  width: 100%;
-  background-color: red; }
-
-.yellow {
-  height: 200px;
-  width: 100%;
-  background-color: yellow; }
-
-.green {
-  height: 200px;
-  width: 100%;
-  background-color: green; }
-
-.blue {
-  height: 200px;
-  width: 100%;
-  background-color: blue; }
-
 .container-fluid {
-  font-family: 'Maven Pro', sans-serif;
-  color: #eee; }
-  .container-fluid .bio {
-    margin: 0 5%;
-    padding-bottom: 8%;
-    text-align: justify;
-    font-size: 1.4em; }
-    .container-fluid .bio .image {
-      width: 100%; }
-      .container-fluid .bio .image img {
-        height: auto;
-        overflow: hidden;
-        margin: auto; }
-    .container-fluid .bio ul {
-      margin-left: -40px;
-      list-style-type: none; }
-      .container-fluid .bio ul li {
-        margin-right: 5px;
-        display: inline-block; }
-    .container-fluid .bio a {
-      font-weight: bold;
-      color: #614A4A; }
-    .container-fluid .bio a:link {
-      color: #614A4A;
-      text-decoration: none; }
-    .container-fluid .bio a:hover {
-      color: #ccc;
-      text-decoration: none; }
-    .container-fluid .bio a:visited {
-      text-decoration: none; }
-    .container-fluid .bio a:active {
-      color: #1F0505;
-      text-decoration: none; }
+  border: 1px solid red;
+  margin: 100px 100px; }
+  .container-fluid .row {
+    border: 1px solid green; }
 
-.slide-container {
-  height: 90%;
-  width: 100%; }
+.multiply-container {
+  border: 1px solid red; }
 
-.container-fluid {
-  width: 100%;
-  margin: auto;
-  padding: 0; }
+.multiply-container {
+  min-height: 90px;
+  padding: 0 15px; }
 
-.about-wrapper {
-  color: #eee;
-  text-align: center;
-  width: 100%;
-  padding: 0 50px; }
-  .about-wrapper p {
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 2em; }
-  .about-wrapper .top-padder {
-    display: none; }
-
-.project-wrapper {
-  margin: 0 auto;
-  padding-bottom: 100px;
-  width: 1200px; }
-  .project-wrapper .grid-item {
-    width: 200px;
-    padding: 10px; }
-    .project-wrapper .grid-item .rect1 {
-      height: 180px;
-      width: 180px;
-      margin: 5px auto;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      cursor: pointer; }
-      .project-wrapper .grid-item .rect1 .link {
-        display: block;
-        height: 100%;
-        width: 100%; }
-
-.top-padder {
+.multiply {
+  position: relative;
   height: 50px;
-  width: 100%; }
+  padding: 6px 0;
+  border: 1px solid teal; }
 
-.bottom-padder {
-  height: 150px;
-  width: 100%; }
+.multiply .reorder-handle {
+  top: 6px;
+  left: 3px;
+  font-size: 17px;
+  color: #999; }
 
-.slide-navigation {
-  text-align: center;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 14px; }
-  .slide-navigation ul {
-    list-style-type: none; }
-    .slide-navigation ul li {
-      display: inline-block;
-      padding: 5px; }
-      .slide-navigation ul li a {
-        color: #888;
-        font-weight: bold; }
-      .slide-navigation ul li a:link {
-        color: #ccc;
-        text-decoration: none; }
-      .slide-navigation ul li a:hover {
-        color: #614A4A;
-        text-decoration: none; }
-      .slide-navigation ul li .active {
-        color: #614A4A; }
-
-.logo-wrapper {
-  position: relative; }
-  .logo-wrapper svg {
-    height: auto;
-    width: 600px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
-
-.member-wrapper {
-  font-family: 'Maven Pro', sans-serif; }
-  .member-wrapper a {
-    font-weight: bold;
-    color: #614A4A; }
-  .member-wrapper a:link {
-    color: #614A4A;
-    text-decoration: none; }
-  .member-wrapper a:hover {
-    color: #ccc;
-    text-decoration: none; }
-  .member-wrapper a:visited {
-    text-decoration: none; }
-  .member-wrapper a:active {
-    color: #1F0505;
-    text-decoration: none; }
-
-.member-thumbnail {
-  height: 75px;
-  width: 75px;
-  margin: 0 auto; }
-  .member-thumbnail img {
-    max-height: 100%;
-    max-width: 100%; }
-
-.member-image {
-  height: 150px;
-  width: 150px;
-  margin: 0 auto; }
-  .member-image img {
-    max-height: 100%;
-    max-width: 100%; }
-
-.team-wrapper {
-  margin: 20px 50px; }
-  .team-wrapper .member-wrapper {
-    color: #eee;
-    font-size: 1.4em;
-    margin-bottom: 2%; }
-
-/* Outer */
-.popup {
+.multiply input {
   width: 100%;
-  height: 100%;
-  display: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 1; }
-  .popup .popup-inner {
-    height: 60%;
-    max-width: 600px;
-    width: 40%;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 83%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background: #614A4A; }
+  height: 100%; }
 
-/* Inner */
-/* Close Button */
-.popup-close {
-  width: 30px;
-  height: 30px;
-  padding-top: 4px;
-  display: inline-block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  transition: ease 0.25s all;
-  -webkit-transform: translate(50%, -50%);
-  transform: translate(50%, -50%);
-  border-radius: 1000px;
-  background: rgba(0, 0, 0, 0.8);
-  font-family: Arial, Sans-Serif;
-  font-size: 20px;
+.multiply .form-group {
+  margin-bottom: 0; }
+
+.multiply .row-buttons button {
+  width: 40px;
+  height: 40px;
+  padding-top: 6px;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 20px;
+  font-size: 14px; }
+
+.multiply-group {
+  position: relative;
+  height: 60px;
+  border: 1px solid purple; }
+
+.multiply-group .action-icon {
+  z-index: 2;
+  height: 21px;
+  width: 21px;
+  background-color: transparent;
+  font-size: 17px;
+  color: #999;
   text-align: center;
-  line-height: 100%;
-  color: #fff; }
+  margin-top: 10px; }
 
-.popup-close:hover {
-  -webkit-transform: translate(50%, -50%) rotate(180deg);
-  transform: translate(50%, -50%) rotate(180deg);
-  background: black;
-  text-decoration: none; }
+.multiply-group input {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  width: 100%;
+  background: transparent;
+  outline: 0;
+  margin-top: 3px;
+  margin-left: -65px; }
 
-/*-------contact-------*/
-.map {
-  height: 450px;
-  width: 90%;
-  margin: auto; }
+.hotbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 20px;
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  transition: 200ms linear; }
 
-.contact-info {
-  color: #eee;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 1.4em; }
-
-/*------- modal para os projectos -------*/
-.modal {
-  position: absolute;
+.hotbox.active {
+  border: 1px dashed #aaa;
   height: 100px;
-  width: 100px;
-  background-color: red; }
+  transition: 300ms linear; }
 
-/*------- fim da modal -------*/
-/*------- admin ------*/
-.login {
-  width: 200px;
-  margin: 100px auto; }
-  .login input {
-    margin-bottom: 15px; }
+.ungrouped {
+  min-height: 50px; }
 
-/*------- endadmin-------*/
-@media (min-width: 320px) {
-  .logo-wrapper {
-    position: relative; }
-    .logo-wrapper svg {
-      height: auto;
-      width: 300px;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition: 200ms linear; }
-  .about-wrapper {
-    padding: 0 5%; }
-    .about-wrapper p {
-      font-size: 12px; }
-  .bio .image-wrapper {
-    height: 200px; }
-    .bio .image-wrapper .image {
-      position: relative;
-      background-image: url("img/mjf.jpg");
-      height: 150px;
-      width: 200px;
-      position: absolute;
-      margin: auto;
-      left: 0;
-      right: 0; }
-  .bio .info-wrapper {
-    font-size: 9px;
-    padding-bottom: 20px; }
-  .team-wrapper {
-    margin: 20px 0;
-    padding: 0;
-    font-size: 9px; }
-    .team-wrapper .member-wrapper {
-      font-size: 9px; }
-      .team-wrapper .member-wrapper .member-image {
-        display: none; }
-    .team-wrapper .popup-inner {
-      height: 80%;
-      width: 30%; }
-  .project-wrapper {
-    width: 200px; }
-  .contact-wrapper .map {
-    height: 200px;
-    width: 90%;
-    margin: 20px auto; }
-  .contact-wrapper .contact-info {
-    padding: 0 20px;
-    color: #eee;
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 9px; } }
+.locked {
+  min-height: 70px; }
 
-@media (min-width: 481px) {
-  .logo-wrapper svg {
-    width: 400px; }
-  .about-wrapper {
-    padding: 0 5%; }
-    .about-wrapper p {
-      font-size: 24px; }
-  .bio .info-wrapper {
-    font-size: 18px;
-    padding-bottom: 20px; }
-  .team-wrapper {
-    margin: 100px 0;
-    padding: 0; }
-    .team-wrapper .member-wrapper {
-      font-size: 18px; }
-      .team-wrapper .member-wrapper .member-image {
-        display: none; }
-    .team-wrapper .popup-inner {
-      height: 80%;
-      width: 30%; }
-  .project-wrapper {
-    width: 400px; } }
-
-@media (min-width: 641px) {
-  .logo-wrapper svg {
-    width: 500px; }
-  .team-wrapper {
-    margin: 100px 50px; }
-    .team-wrapper .member-wrapper .member-image {
-      display: block; }
-  .project-wrapper {
-    width: 600px; }
-  .contact-wrapper .map {
-    height: 400px;
-    width: 90%;
-    margin: 20px auto; }
-  .contact-wrapper .contact-info {
-    padding: 0 35px;
-    color: #eee;
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 14px; } }
-
-@media (min-width: 961px) {
-  .about-wrapper {
-    padding: 0 5%; }
-    .about-wrapper p {
-      font-size: 20px; }
-  .bio .info-wrapper {
-    font-size: 14px;
-    padding-bottom: 20px; }
-  .team-wrapper {
-    margin: 60px 50px; }
-    .team-wrapper .member-wrapper {
-      font-size: 14px; }
-      .team-wrapper .member-wrapper .member-image {
-        display: block; }
-    .team-wrapper .popup-inner {
-      height: 90%;
-      width: 60%; }
-  .project-wrapper {
-    width: 800px; }
-  .contact-wrapper .map {
-    height: 400px;
-    width: 90%;
-    margin: 20px auto 100px auto; }
-  .contact-wrapper .contact-info {
-    padding: 20px 0;
-    color: #eee;
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 14px; } }
+.multiply-placeholder {
+  width: 100%; }
 
 /*# sourceMappingURL=app.css.map */

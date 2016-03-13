@@ -16,19 +16,33 @@ Route::group(['middleware' => ['web']], function () {
 	{
 		Route::get('/', [
 			'as'   => 'admin',
-			'uses' => 'LoginController@dashboard',
+			'uses' => 'DashboardController@show',
 		]);
 
-		Route::get('test', [
-			'as'   => 'test',
-			'uses' => 'DashboardController@show'
+		Route::get('projects', [
+			'as'   => 'projects',
+			'uses' => 'DashboardController@projects'
 		]);
 
-		Route::post('test', [
-			'as'   => 'test_post',
-			'uses' => 'DashboardController@submit'
+		Route::get('members', [
+			'as'   => 'members',
+			'uses' => 'DashboardController@members'
 		]);
 
+		Route::get('members/edit/{id?}', [
+			'as'   => 'member',
+			'uses' => 'DashboardController@edit'
+		]);
+
+		Route::post('members/edit/{id?}', [
+			'as'   => 'member_submit',
+			'uses' => 'DashboardController@submitMember'
+		]);
+
+		Route::delete('members/edit/{id?}', [
+			'as'   => 'member_delete',
+			'uses' => 'DashboardController@deleteMember'
+		]);    
 	});
 
 });
