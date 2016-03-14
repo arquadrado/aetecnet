@@ -13,13 +13,12 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
-    mix.sass(['admin/admin.scss', 'reqs/multiply.scss']);
+    mix.sass(['admin/admin.scss', 'reqs/multiply.scss'], 'public/css/admin/admin.css');
 });
 
 elixir(function(mix) {
     mix.scripts(['app.js'], 'public/js/app.js')
        .scripts([
        		'reqs/multiply.js',
-       		'admin/admin.js'
-       	], 'public/js/admin.js');
+       		'admin/admin.js'], 'public/js/admin.js');
 });
