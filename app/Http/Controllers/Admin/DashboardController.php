@@ -19,26 +19,48 @@ class DashboardController extends Controller
         return view('admin.dashboard', [ 'projects' => $projects ]);
     }
 
-    public function submit()
+    public function submitProject()
     {
         $request = request();
-        //dd(ProjectImage::where('id', 1)->get());
-        $project = new Project;
+        //dd($request);
+        $id = request()->id;
+        $project = $id === '' || is_null($id) ? new Project : Project::find($id);
+
+        //dd($request->imagesToDelete);
+        if(!is_null($request->imagesToDelete)){
+                foreach ($request->imagesToDelete as $image) {
+                    $imgToDel = ProjectImage::find($image);
+                    File::Delete(base_path().'/public/'.$imgToDel->path);
+                    $imgToDel->delete();
+                }
+        }
+
         $project->name = $request->name;
         $project->category_id = $request->category_id;
         $project->save();
         $files = $request->file('images');
-        $destinationPath = base_path().'/public/img';
-        //pour resoudre
-        foreach ($files as $file) {
-            $imageTempName = $file->getPathname();
-            $imageName = $file->getClientOriginalName();
-            $file->move($destinationPath, $imageName);
-            $projectImage = new ProjectImage;
-            $projectImage->project_id = $project->id;
-            $projectImage->path = $destinationPath.'/'.$imageName;
-            $projectImage->save();
+        $destinationPath = base_path().'/public/img/projects';
+        if(!is_null(head($files))){
+            foreach ($files as $file) {
+                $imageName = $this->checkImageName($file->getClientOriginalName());
+                $file->move($destinationPath, $imageName);
+                $projectImage = new ProjectImage;
+                $projectImage->name = $imageName; 
+                $projectImage->project_id = $project->id;
+                $projectImage->path = 'img/projects/'.$imageName;
+                $projectImage->save();
+            }
         }
+        return redirect(route('projects'));
+    }
+
+    public function checkImageName($name){
+        $imageIndex = ProjectImage::orderBy('id', 'desc')->first()->id + 1;
+        $nameExploded = explode('.', $name);
+        $imgName = $nameExploded[0];
+        $imgExtension = $nameExploded[1];
+        return $imgName.'-'.$imageIndex.'.'.$imgExtension;
+
     }
 
     public function projects()
@@ -47,12 +69,24 @@ class DashboardController extends Controller
         return view('admin.project.table', [ 'projects' => $projects ]);
     }
 
+    public function editProject($id = null)
+    {
+        $project = Project::find($id);
+        $images = [];
+        $urlComponents = explode('admin', url()->current());
+        $baseURL = $urlComponents[0];
+        if(!is_null($project)){
+            $images = $project->images;
+        }
+        return view('admin.project.edit', ['project' => $project, 'images' => $images, 'url' => $baseURL]);
+    }
+
     public function members()
     {
         $members = Member::all();
         return view('admin.member.table', [ 'members' => $members ]);
     }
-    public function edit($id = null)
+    public function editMember($id = null)
     {
         $member = Member::find($id);
         return view('admin.member.edit', ['member' => $member]);
@@ -86,7 +120,6 @@ class DashboardController extends Controller
         }
 
         $destinationPath = base_path().'/public/img/members';
-        $imageTempName = $image->getPathname();
         $imageName = $image->getClientOriginalName();
         $image->move($destinationPath, $imageName);
 

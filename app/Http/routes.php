@@ -24,6 +24,16 @@ Route::group(['middleware' => ['web']], function () {
 			'uses' => 'DashboardController@projects'
 		]);
 
+		Route::get('projects/edit/{id?}', [
+			'as'   => 'project',
+			'uses' => 'DashboardController@editProject'
+		]);
+
+		Route::post('projects/edit/{id?}', [
+			'as'   => 'project_submit',
+			'uses' => 'DashboardController@submitProject'
+		]);
+
 		Route::get('members', [
 			'as'   => 'members',
 			'uses' => 'DashboardController@members'
@@ -31,7 +41,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		Route::get('members/edit/{id?}', [
 			'as'   => 'member',
-			'uses' => 'DashboardController@edit'
+			'uses' => 'DashboardController@editMember'
 		]);
 
 		Route::post('members/edit/{id?}', [
@@ -55,8 +65,8 @@ Route::get('/', [
 	'uses' => 'FrontEndController@mainPage',
 ]);
 
-Route::get('/projects/{company}', [
-	'as'   => 'project',
+Route::get('/projects', [
+	'as'   => 'projects_page',
 	'uses' => 'FrontEndController@showProject'
 ]);
 

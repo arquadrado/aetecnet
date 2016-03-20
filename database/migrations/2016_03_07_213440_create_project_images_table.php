@@ -14,6 +14,7 @@ class CreateProjectImagesTable extends Migration
     {
         Schema::create('project_images', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->string('path');
             $table->integer('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');;
@@ -21,7 +22,7 @@ class CreateProjectImagesTable extends Migration
         });
     }
 
-    /**
+    /**$2y$10$LjH2ozamASp63YSepNceXejOPInffyHCFM0CjmpGfZr9dh7SQ181S
      * Reverse the migrations.
      *
      * @return void

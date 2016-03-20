@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
-	<a href="{{ route('member') }}">Adicionar projecto</a>
+	<a href="{{ route('project') }}">Adicionar projecto</a>
     @foreach($projects as $project)
     <a href="{{ route('project', ['id' => $project->id]) }}">
     	<div class="row">
@@ -11,3 +11,4 @@
     </a>
     @endforeach
 @stop
+
