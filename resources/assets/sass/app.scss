@@ -355,6 +355,62 @@
 }
 /*------- endadmin-------*/
 
+/*------- project page -------*/
+
+.project-image {
+	position:relative;
+	margin:auto;
+	height: 500px;
+	width: 900px;
+	img {
+		position: absolute;
+		width: 100%;
+		margin: auto;
+		top:0;
+		left:0;
+		right: 0;
+	}
+}
+
+.project-info {
+	position:relative;
+	margin:auto;
+	height: 500px;
+	width: 900px;
+	.title{
+		font-size: 22px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.description {
+		font-size: 14px;
+		margin-top: 30px;
+		margin-bottom: 100px;
+		p{
+			text-align: justify;
+		}
+	}
+	.row>* {
+		position: relative;
+	}
+	.image {
+		height: 300px;
+	}
+
+	img {
+		position: absolute;
+		height: 100%;
+		margin: auto;
+		top:0;
+		left:0;
+		right: 0
+	}
+}
+
+/*------- end project page -------*/
+
+
 @media (min-width:320px) { 
 	.logo-wrapper {
 		position: relative;
@@ -427,6 +483,13 @@
 			font-size: 9px;
 		}
 	}
+
+	.project-image {
+		position:relative;
+		margin:auto;
+		width: 320px;
+	}
+	
 }
 @media (min-width:481px) { 
 	.logo-wrapper {
@@ -464,6 +527,12 @@
 		width: 400px;
 	}
 
+	.project-image {
+		position:relative;
+		margin:auto;
+		width: 481px;
+	}
+
 
 }
 @media (min-width:641px) { 
@@ -498,6 +567,12 @@
 			font-family: 'Maven Pro', sans-serif;
 			font-size: 14px;
 		}
+	}
+
+	.project-image {
+		position:relative;
+		margin:auto;
+		width: 641px;
 	}
 
 }
@@ -543,6 +618,12 @@
 			font-family: 'Maven Pro', sans-serif;
 			font-size: 14px;
 		}
+	}
+
+	.project-image {
+		position:relative;
+		margin:auto;
+		width: 961px;
 	}
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }

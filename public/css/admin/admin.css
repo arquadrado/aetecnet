@@ -1,6 +1,9 @@
 .container-fluid {
   margin: 100px 100px; }
 
+.row {
+  margin-top: 20px; }
+
 .multiply-container {
   min-height: 90px;
   padding: 0 15px; }

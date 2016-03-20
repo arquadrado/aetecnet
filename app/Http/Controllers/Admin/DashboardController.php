@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Member;
 use App\ProjectImage;
+use App\Category;
 
 use File;
 
@@ -19,50 +20,7 @@ class DashboardController extends Controller
         return view('admin.dashboard', [ 'projects' => $projects ]);
     }
 
-    public function submitProject()
-    {
-        $request = request();
-        //dd($request);
-        $id = request()->id;
-        $project = $id === '' || is_null($id) ? new Project : Project::find($id);
-
-        //dd($request->imagesToDelete);
-        if(!is_null($request->imagesToDelete)){
-                foreach ($request->imagesToDelete as $image) {
-                    $imgToDel = ProjectImage::find($image);
-                    File::Delete(base_path().'/public/'.$imgToDel->path);
-                    $imgToDel->delete();
-                }
-        }
-
-        $project->name = $request->name;
-        $project->category_id = $request->category_id;
-        $project->save();
-        $files = $request->file('images');
-        $destinationPath = base_path().'/public/img/projects';
-        if(!is_null(head($files))){
-            foreach ($files as $file) {
-                $imageName = $this->checkImageName($file->getClientOriginalName());
-                $file->move($destinationPath, $imageName);
-                $projectImage = new ProjectImage;
-                $projectImage->name = $imageName; 
-                $projectImage->project_id = $project->id;
-                $projectImage->path = 'img/projects/'.$imageName;
-                $projectImage->save();
-            }
-        }
-        return redirect(route('projects'));
-    }
-
-    public function checkImageName($name){
-        $imageIndex = ProjectImage::orderBy('id', 'desc')->first()->id + 1;
-        $nameExploded = explode('.', $name);
-        $imgName = $nameExploded[0];
-        $imgExtension = $nameExploded[1];
-        return $imgName.'-'.$imageIndex.'.'.$imgExtension;
-
-    }
-
+    //projects
     public function projects()
     {
         $projects = Project::all();
@@ -73,14 +31,88 @@ class DashboardController extends Controller
     {
         $project = Project::find($id);
         $images = [];
+        $categories = Category::all();
+        $companies = [
+            'Aetec-Mo'  => 'aetecmo',
+            'Stepaetec' => 'stepaetec',
+        ];
         $urlComponents = explode('admin', url()->current());
         $baseURL = $urlComponents[0];
         if(!is_null($project)){
             $images = $project->images;
         }
-        return view('admin.project.edit', ['project' => $project, 'images' => $images, 'url' => $baseURL]);
+        return view('admin.project.edit', [
+            'project'    => $project,
+            'images'     => $images,
+            'categories' => $categories,
+            'companies'  => $companies,
+            'url'        => $baseURL
+        ]);
     }
 
+    public function submitProject()
+    {
+        $request = request();
+        $id = request()->id;
+        $project = $id === '' || is_null($id) ? new Project : Project::find($id);
+
+        //dd($request->imagesToDelete);
+        if(!is_null($request->imagesToDelete)){
+                foreach ($request->imagesToDelete as $image) {
+                    $imgToDel = ProjectImage::find($image);
+                    File::Delete(base_path().'/public/'.$imgToDel->path);
+                    $imgToDel->delete();
+                }
+            $project->cover_path = ProjectImage::where('project_id', $project->id)->first()->path;
+        }
+
+        $project->name = $request->name;
+        //dd($request);
+        $project->description = $request->description;
+        $project->category_id = $request->category_id;
+        $project->company = $request->company;
+        $project->selected = is_null($request->selected) ? 0 : $request->selected;
+        $files = $request->file('images');
+        $destinationPath = base_path().'/public/img/projects';
+        $project->save();
+        if(!is_null(head($files))){
+            foreach ($files as $file) {
+                $imageName = $this->checkImageName($file->getClientOriginalName());
+                $file->move($destinationPath, $imageName);
+                $projectImage = new ProjectImage;
+                $projectImage->name = $imageName; 
+                $projectImage->project_id = $project->id;
+                $projectImage->path = 'img/projects/'.$imageName;
+                $projectImage->save();
+            }
+            $project->cover_path = ProjectImage::where('project_id', $project->id)->first()->path;
+        }
+        $project->save();
+        return redirect(route('projects'));
+    }
+
+    public function checkImageName($name){
+        $imageIndex = ProjectImage::count() ? ProjectImage::orderBy('id', 'desc')->first()->id + 1 : 1;
+        $nameExploded = explode('.', $name);
+        $imgName = $nameExploded[0];
+        $imgExtension = $nameExploded[1];
+        return $imgName.'-'.$imageIndex.'.'.$imgExtension;
+
+    }
+
+    public function deleteProject()
+    {   
+        $projectId = request()->id;
+        $projectImages = ProjectImage::where('project_id', $projectId)->get();
+        foreach ($projectImages as $image) {
+            File::Delete(base_path().'/public/'.$image->path);
+            $image->delete();
+        }
+        Project::destroy(request()->id);
+        return redirect(route('projects'));
+    }
+
+    //members
     public function members()
     {
         $members = Member::all();

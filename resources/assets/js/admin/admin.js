@@ -19,7 +19,7 @@ $(document).ready(function(){
     $deleteButton.on('click', function(){
     	var img = $(this).parent().find('img').attr('id');
 	    $('.images').append('<input type="hidden" name="imagesToDelete[]" value="' + img + '" />');
-
+	    $(this).parent().remove();
     });
 
 

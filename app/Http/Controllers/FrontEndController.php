@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use App\Project;
+use App\Category;
 use App\Http\Controllers\Controller;
 
 class FrontEndController extends Controller
@@ -16,17 +18,45 @@ class FrontEndController extends Controller
     public function mainPage()
     {   
         $members =  Member::orderBy('name', 'asc')->get();
-        return view('main-content', ['members' => $members] );
+        $companies = [
+            'Aetec-Mo'  => 'aetec-mo',
+            'Stepaetec' => 'stepaetec',
+        ];
+        
+        return view('main-content', [
+            'members'          => $members,
+            'companies'        => $companies,
+        ]);
     }
 
-    public function showProject($slug = null)
+    public function showProjects($company, $projectId = null)
     {
-        if($slug === 'aetec-mo'){
-            dd('hey');    
-        } elseif ($slug === 'stepaetec') {
-            dd('ho');
+        $urlComponents = explode('projects', url()->current());
+        $baseURL = $urlComponents[0];
+        $categories = Category::all();
+        $companies = [
+            'Aetec-Mo'  => 'aetec-mo',
+            'Stepaetec' => 'stepaetec',
+        ];
+
+        $current_company = $company;
+
+        if(is_null($projectId)){
+
+            return view('company-projects', [
+                'categories' => $categories,
+                'companies'  => $companies, 
+                'current_company' => $current_company,
+                'url'        => $baseURL,
+            ]);
         }
-        
-        return view('project');
+
+        $project = Project::find($projectId);
+        return view('project', [
+            'companies'  => $companies, 
+            'current_company' => $current_company,
+            'project' => $project,
+            'url'        => $baseURL,
+        ]);
     }
 }

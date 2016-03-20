@@ -15,22 +15,23 @@
                     <a href="#page-top"></a>
                 </li>
                 <li data-menuanchor="firstPage" class="page-scroll active">
-                    <a href="#firstPage" class="hvr-sweep-to-top">Home</a>
+                    <a href="{{ route('home') }}#firstPage" class="hvr-sweep-to-top">Home</a>
                 </li>
                 <li data-menuanchor="secondPage" class="page-scroll">
-                    <a href="#secondPage" class="hvr-sweep-to-top">About us</a>
+                    <a href="{{ route('home') }}#secondPage" class="hvr-sweep-to-top">About us</a>
                 </li>
                 <li data-menuanchor="thirdPage" class="page-scroll">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Projects <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#thirdPage">Selected Projects</a></li>
-                    <li><a href="/projects/aetec-mo">Aetec-mo</a></li>
-                    <li><a href="/projects/stepaetec">Stepaetec</a></li>
+                    <li><a href="{{ route('home') }}#thirdPage">Selected Projects</a></li>
+                    @foreach($companies as $name => $company)
+                    <li><a href="{{ route('projects_page', [$company]) }}">{{ $name }}</a></li>
+                    @endforeach
                   </ul>
                 </li>
                 
                 <li data-menuanchor="fourthPage" class="page-scroll">
-                    <a href="#fourthPage" class="hvr-sweep-to-top">Contact</a>
+                    <a href="{{ route('home') }}#fourthPage" class="hvr-sweep-to-top">Contact</a>
                 </li>
             </ul>
 

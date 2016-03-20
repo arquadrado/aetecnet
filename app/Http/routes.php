@@ -34,6 +34,11 @@ Route::group(['middleware' => ['web']], function () {
 			'uses' => 'DashboardController@submitProject'
 		]);
 
+		Route::delete('projects/edit/{id?}', [
+			'as'   => 'project_delete',
+			'uses' => 'DashboardController@deleteProject'
+		]);
+
 		Route::get('members', [
 			'as'   => 'members',
 			'uses' => 'DashboardController@members'
@@ -65,9 +70,9 @@ Route::get('/', [
 	'uses' => 'FrontEndController@mainPage',
 ]);
 
-Route::get('/projects', [
+Route::get('/projects/{company}/{projectId?}', [
 	'as'   => 'projects_page',
-	'uses' => 'FrontEndController@showProject'
+	'uses' => 'FrontEndController@showProjects'
 ]);
 
 

@@ -14,12 +14,29 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	$faker = Faker::create();
+        DB::table('users')->insert([
+            'name' => 'António Quadrado',
+            'email' => 'arq.quadrado@gmail.com',
+            'password' => bcrypt('1234567'),
+        ]);
     	foreach (range(1,10) as $index) {
-	        DB::table('users')->insert([
+	        DB::table('members')->insert([
 	            'name' => $faker->name,
-	            'email' => $faker->email,
-	            'password' => bcrypt('secret'),
+	            'function' => 'Architect',
+                'image' => 'img/placeholder.jpg',
 	        ]);
         }
+        DB::table('companies')->insert(['name' => 'Aetec-mo']);
+        DB::table('companies')->insert(['name' => 'Stepaetec']);
+
+        DB::table('categories')->insert([
+            'name' => 'housing',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'housing',
+            'company_id' => 2
+        ]);
     }
 }

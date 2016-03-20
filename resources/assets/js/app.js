@@ -4,7 +4,6 @@ function log(item) {
 };
 
 $(document).ready(function() {
-    log('ah caralho');
         //general
         $(document).click(function(event) {
             var clickover = $(event.target);
@@ -351,7 +350,7 @@ $(document).ready(function() {
             recordHistory: true,
 
             //Design
-            controlArrows: false,
+            controlArrows: true,
             verticalCentered: true,
             resize: true,
             sectionsColor: ['#222', '#222', '#222', '#222'],
