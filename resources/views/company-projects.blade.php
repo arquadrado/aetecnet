@@ -9,7 +9,7 @@
 
             <div class="section" id="section1">
                 <div class="slide-container">
-                @foreach($categories as $category)
+                @foreach($categories as $category => $projects)
                 	<div class="slide" id="slide1">
                     	@include('partials.category')
                     </div>
@@ -17,8 +17,8 @@
                 </div>
                 <div class="slide-navigation">
                     <ul>
-                    @foreach($categories as $index => $category)
-                        <li><a class="active" href="#firstPage{{$index > 0 ? '/'.$index : '' }}">{{ $category->name }}</a></li>
+                    @foreach($categoriesIndexes as $index => $categoryName)
+                        <li><a class="active" href="#firstPage{{$index > 0 ? '/'.$index : '' }}">{{ $categoryName }}</a></li>
                     @endforeach
                     </ul>
                 </div>

@@ -20,8 +20,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label for="selected">Destaque</label>
-                    <!-- ainda nao ha project por isso nao posso aceder à propriedade do objecto! dah! -->
-                    <input type="checkbox" name="selected" value="1" {{ $project->selected ? 'checked' : '' }}> 
+                    <input type="checkbox" name="selected" value="1" {{ !is_null($project) ? ($project->selected ? 'checked' : '') : '' }}> 
                 </div>
             </div>
              <div class="row">

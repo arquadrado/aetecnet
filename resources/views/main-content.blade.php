@@ -34,18 +34,18 @@
 
             <div class="section" id="section2">
                 <div class="slide-container">
-                    <div class="slide" id="slide1">
-                        @include('partials.projects')
-                    </div>
+                @foreach($companies as $company)
                     <div class="slide" id="slide2">
                         <div class="container-fluid">
-                            @include('partials.projects')
+                            @include('partials.projects-'.$company['slug'])
                         </div>
                     </div>
+                @endforeach
                     <div class="slide-navigation">
                         <ul>
-                            <li><a class="active" href="#thirdPage">Selected</a></li>
-                            <li><a href="#thirdPage/1">Housing</a></li>
+                        @foreach($companies as $index => $company)
+                            <li><a class="active" href="#thirdPage{{$index > 0 ? '/'.$index : '' }}">{{ $company['name'] }}</a></li>
+                        @endforeach
                         </ul>
                     </div>
                 </div>

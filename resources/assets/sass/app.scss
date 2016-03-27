@@ -141,6 +141,7 @@
 			width: 200px;
 			padding: 10px;
 			.rect1{
+				position: relative;
 				height: 180px;
 				width: 180px;
 				margin: 5px auto;
@@ -153,6 +154,41 @@
 					display: block;
 					height: 100%;
 					width: 100%;
+				}
+				.image-filter {
+					position: absolute;
+					background-color: rgba(0, 0, 0, 0);;
+					height: 100%;
+					width: 100%;
+					top: 0;
+					transition: 300ms;
+					p {
+					    color: #ddd;
+					    text-align: center;
+					    bottom: 0;
+					    top: 90px;
+					    font-weight: bold;
+					    font-size: 16px;
+					    opacity: 0;
+						transition: 300ms;
+					}
+				}
+
+				.image-filter:hover {
+					background-color: rgba(0, 0, 0, 0.7);;
+					transition: 300ms;
+					p {
+						opacity: 1;
+						transition: 300ms;
+					}
+				}
+				.project-name {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					font-size: 12px;
 				}
 			}
 		}
@@ -334,7 +370,7 @@
 	font-size: 1.4em;
 }
 
-/*------- modal para os projectos -------*/
+/*------- project thumbnails -------*/
 
 .modal {
 	position: absolute;
@@ -343,7 +379,7 @@
 	background-color: red;
 }
 
-/*------- fim da modal -------*/
+/*------- end project thumbnails -------*/
 
 /*------- admin ------*/
 .login {

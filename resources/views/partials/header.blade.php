@@ -24,8 +24,8 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Projects <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ route('home') }}#thirdPage">Selected Projects</a></li>
-                    @foreach($companies as $name => $company)
-                    <li><a href="{{ route('projects_page', [$company]) }}">{{ $name }}</a></li>
+                    @foreach($companies as $company)
+                    <li><a href="{{ route('projects_page', [$company['slug']]) }}">{{ $company['name'] }}</a></li>
                     @endforeach
                   </ul>
                 </li>

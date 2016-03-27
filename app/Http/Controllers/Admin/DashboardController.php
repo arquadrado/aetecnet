@@ -33,7 +33,7 @@ class DashboardController extends Controller
         $images = [];
         $categories = Category::all();
         $companies = [
-            'Aetec-Mo'  => 'aetecmo',
+            'Aetec-Mo'  => 'aetec-mo',
             'Stepaetec' => 'stepaetec',
         ];
         $urlComponents = explode('admin', url()->current());

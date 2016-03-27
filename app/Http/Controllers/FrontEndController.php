@@ -18,26 +18,36 @@ class FrontEndController extends Controller
     public function mainPage()
     {   
         $members =  Member::orderBy('name', 'asc')->get();
-        $companies = [
-            'Aetec-Mo'  => 'aetec-mo',
-            'Stepaetec' => 'stepaetec',
-        ];
         
+        $aetecProjects = Project::where([
+                                    'selected' => 1,
+                                    'company'  => 'aetec-mo'
+                                ])->get();
+
+        $stepaetecProjects = Project::where([
+                                    'selected' => 1,
+                                    'company'  => 'stepaetec'
+                                ])->get();
         return view('main-content', [
-            'members'          => $members,
-            'companies'        => $companies,
+            'members'           => $members,
+            'companies'         => $this->getCompanies(),
+            'stepaetecProjects' => $stepaetecProjects,
+            'aetecProjects'     => $aetecProjects,
+            'url'               => url()->current().'/',
         ]);
     }
 
     public function showProjects($company, $projectId = null)
     {
+        $this->prepareProjects($company);
         $urlComponents = explode('projects', url()->current());
         $baseURL = $urlComponents[0];
-        $categories = Category::all();
-        $companies = [
-            'Aetec-Mo'  => 'aetec-mo',
-            'Stepaetec' => 'stepaetec',
-        ];
+        $categories = $this->prepareProjects($company);
+        $categoriesIndexes = [];
+
+        foreach ($categories as $name => $projects) {
+            array_push($categoriesIndexes, $name);
+        }
 
         $current_company = $company;
 
@@ -45,7 +55,8 @@ class FrontEndController extends Controller
 
             return view('company-projects', [
                 'categories' => $categories,
-                'companies'  => $companies, 
+                'categoriesIndexes' => $categoriesIndexes,
+                'companies'  => $this->getCompanies(),
                 'current_company' => $current_company,
                 'url'        => $baseURL,
             ]);
@@ -53,10 +64,35 @@ class FrontEndController extends Controller
 
         $project = Project::find($projectId);
         return view('project', [
-            'companies'  => $companies, 
+            'companies'  => $this->getCompanies(), 
             'current_company' => $current_company,
             'project' => $project,
             'url'        => $baseURL,
         ]);
+    }
+
+    public function prepareProjects($company)
+    {
+        $categories = Category::all();
+        $data = [];
+
+        foreach ($categories as $category) {
+            $data[$category->name] = $category->projects->where('company', $company);
+        }
+        return $data;
+    }
+
+    public function getCompanies()
+    {
+        return $companies = [
+            [
+                'name' => 'Aetec-Mo',
+                'slug' => 'aetec-mo'
+            ],
+            [
+                'name' => 'Stepaetec',
+                'slug' => 'stepaetec'
+            ],
+        ];
     }
 }
