@@ -37,6 +37,19 @@
 
 /*-------navbar-end-------*/
 
+/*-------navigations-arrows-------*/
+	.fp-controlArrow.fp-prev {
+		border-width: 15px 15px 15px 0;
+		border-color: transparent #888 transparent transparent;
+	}
+
+	.fp-controlArrow.fp-next {
+		border-width: 15px 0 15px 15px;
+		border-color: transparent transparent transparent #888;
+	}
+
+/*-------navigations-arrows end-------*/
+
 .red {
 	height: 200px;
 	width: 100%;

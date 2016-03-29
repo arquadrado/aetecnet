@@ -29,7 +29,11 @@
                 <div class="slide-navigation">
                     <ul>
                     @foreach($project->images as $index => $image)
+                        @if($index === 0)
                         <li><a class="active" href="#firstPage{{$index > 0 ? '/'.$index : '' }}">{{ $index }}</a></li>
+                        @else
+                        <li><a href="#firstPage{{$index > 0 ? '/'.$index : '' }}">{{ $index }}</a></li>
+                        @endif
                     @endforeach
                     </ul>
                 </div>

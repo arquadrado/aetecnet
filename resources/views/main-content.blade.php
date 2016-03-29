@@ -44,7 +44,11 @@
                     <div class="slide-navigation">
                         <ul>
                         @foreach($companies as $index => $company)
+                            @if($index === 0)
                             <li><a class="active" href="#thirdPage{{$index > 0 ? '/'.$index : '' }}">{{ $company['name'] }}</a></li>
+                            @else
+                            <li><a href="#thirdPage{{$index > 0 ? '/'.$index : '' }}">{{ $company['name'] }}</a></li>
+                            @endif
                         @endforeach
                         </ul>
                     </div>
@@ -62,7 +66,7 @@
                 </div>
                 <div class="slide-navigation">
                     <ul>
-                        <li><a href="#fourthPage">Aetec-mo</a></li>
+                        <li><a class="active" href="#fourthPage">Aetec-mo</a></li>
                         <li><a href="#fourthPage/1">Stepaetec</a></li>
                     </ul>
                 </div>

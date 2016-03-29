@@ -1,9 +1,12 @@
 <div class="project-wrapper">
 	@foreach($aetecProjects as $project)
 	<div class="grid-item">
-		<a href="{{ route('projects_page', [$company['slug'], $project->id]) }}">
-			<div class="rect1" style="background-image: url('{{ $url.$project->cover_path }}');"></div>
-		</a>
+		<div class="rect1" style="background-image: url('{{ $url.$project->cover_path }}');">
+			<a class="link" href="{{ route('projects_page', [$company['slug'], $project->id]) }}"></a>
+			<div class="image-filter">
+				<p class="project-name">{{ $project->name }}</p>
+			</div>
+		</div>
 	</div>
 	@endforeach
 </div>
