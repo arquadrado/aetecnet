@@ -19,11 +19,22 @@ class DatabaseSeeder extends Seeder
             'email' => 'arq.quadrado@gmail.com',
             'password' => bcrypt('1234567'),
         ]);
+        DB::table('users')->insert([
+            'name' => 'Maria José Freitas',
+            'email' => 'mjf@aetecnet.com',
+            'password' => bcrypt('1234567'),
+        ]);
+        DB::table('users')->insert([
+            'name' => 'João Faria',
+            'email' => 'jf@aetecnet.com',
+            'password' => bcrypt('1234567'),
+        ]);
+
     	foreach (range(1,10) as $index) {
 	        DB::table('members')->insert([
 	            'name' => $faker->name,
 	            'function' => 'Architect',
-                'image' => 'img/placeholder.jpg',
+                'image' => 'img/placeholder.png',
 	        ]);
         }
         DB::table('companies')->insert(['name' => 'Aetec-mo']);

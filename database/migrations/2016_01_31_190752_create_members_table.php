@@ -16,7 +16,7 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('function');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

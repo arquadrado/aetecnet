@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#firstPage">AETECNET DASHBOARD</a>
+            <a class="navbar-brand" href="{{ route('members') }}">PAINEL DE CONTROLO</a>
         </div>
         <div id="navHeaderCollapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -15,10 +15,10 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a href="{{ route('projects') }}">Projects</a>
+                    <a href="{{ route('projects') }}">Projectos</a>
                 </li>
                  <li>
-                    <a href="{{ route('members') }}">Members</a>
+                    <a href="{{ route('members') }}">Membros</a>
                 </li>
             </ul>
 

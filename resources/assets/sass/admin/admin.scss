@@ -1,9 +1,143 @@
 
+body {
+	background-color: #111;
+	color: #9d9d9d;
+}
 
-.container-fluid {
-	margin: 100px 100px;
+.logo-wrapper {
+	width: 300px;
+	height: 230px;
+	margin: auto;
+	svg {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.navbar-inverse {
+	background-color: #111;
+	border-color: #614A4A; 
 }
 
 .row {
-	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.form-field {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.form-control {
+	background-color: #eee;
+	border-radius: 0;
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+.form-button {
+	background-color: #111;
+	border: 1px solid #614A4A;
+	width: 100px;
+	margin-top: 5px;
+	left: 0;
+	right: 0;
+	transition: 200ms;
+}
+
+.form-button:hover {
+	background-color: #614A4A;
+	transition: 200ms;
+}
+
+.container-fluid {
+	margin: 100px 100px;
+	.item-list {
+		.add {
+			color: #9d9d9d;
+			display: block;
+			background-color: #111;
+			border: 1px solid #614A4A;
+			padding: 5px;
+			transition: 200ms;
+			margin-bottom: 20px;
+		}
+		.add:active {
+			text-decoration: none;
+		}
+		.add:focus {
+			text-decoration: none;
+		}
+		.add:hover {
+			text-decoration: none;
+			background-color: #614A4A;
+			transition: 200ms;
+		}
+		.list-item{
+			.name {
+				font-weight: 700;
+			}
+			color: #9d9d9d;
+			transition: 200ms;
+		}
+		.list-item:hover {
+			text-decoration: none;
+			color: #614A4A;
+		} 
+		.list-item:active {
+			text-decoration: none;
+
+		}
+		.list-item:focus {
+			text-decoration: none;
+
+		}
+	}
+	.images {
+		.image {
+			float: left;
+			width: 33.3%;
+			img {
+				width: 100%;
+				height:auto;
+			}
+		}
+	}
+	.delete-btn {
+			color: #9d9d9d;
+			display: block;
+			background-color: #111;
+			border: 1px solid #614A4A;
+			padding: 5px;
+			transition: 200ms;
+			margin-bottom: 20px;
+		}
+		.delete-btn:active {
+			text-decoration: none;
+		}
+		.delete-btn:focus {
+			text-decoration: none;
+		}
+		.delete-btn:hover {
+			text-decoration: none;
+			background-color: #614A4A;
+			transition: 200ms;
+		}
+	textarea {
+		width: 100%;
+		height: 200px;
+	}
+}
+
+.member-image {
+	img {
+		width: 100px;
+	}
+}
+
+.login {
+	position: relative;
+	width: 300px;
+	margin: auto;
+	
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Member;
+use App\Experience;
 use App\ProjectImage;
 use App\Category;
 
@@ -60,10 +61,12 @@ class DashboardController extends Controller
         if(!is_null($request->imagesToDelete)){
                 foreach ($request->imagesToDelete as $image) {
                     $imgToDel = ProjectImage::find($image);
-                    File::Delete(base_path().'/public/'.$imgToDel->path);
-                    $imgToDel->delete();
+                    if(!is_null($imgToDel)){
+                        File::Delete(base_path().'/public/'.$imgToDel->path);
+                        $imgToDel->delete();   
+                    }
                 }
-            $project->cover_path = ProjectImage::where('project_id', $project->id)->first()->path;
+            $project->cover_path = !is_null(ProjectImage::where('project_id', $project->id)->first()) ? ProjectImage::where('project_id', $project->id)->first()->path : '';
         }
 
         $project->name = $request->name;
@@ -121,7 +124,12 @@ class DashboardController extends Controller
     public function editMember($id = null)
     {
         $member = Member::find($id);
-        return view('admin.member.edit', ['member' => $member]);
+        $urlComponents = explode('admin', url()->current());
+        $baseURL = $urlComponents[0];
+        return view('admin.member.edit', [
+            'member' => $member,
+            'url' => $baseURL,
+        ]);
     }
 
     public function submitMember()
@@ -132,6 +140,28 @@ class DashboardController extends Controller
         $member->function = request()->function;
         $this->setMemberImage(request()->file('image'), $member);
         $member->save();
+        $experiences = request('experiences');
+        if(!is_null($experiences)){
+            foreach ($experiences as $experience) {
+                if(!isset($experience['id'])){
+                    $newExperience = new Experience;
+                    $newExperience->start = $experience['start'];
+                    $newExperience->end = $experience['end'];
+                    $newExperience->function = $experience['role'];
+                    $newExperience->institution = $experience['company'];
+                    $newExperience->member_id = $member->id;
+                    $newExperience->save();
+                    
+                } else {
+                    $experienceToEdit = Experience::find($experience['id']);
+                    $experienceToEdit->start = $experience['start'];
+                    $experienceToEdit->end = $experience['end'];
+                    $experienceToEdit->function = $experience['role'];
+                    $experienceToEdit->institution = $experience['company'];
+                    $experienceToEdit->save();
+                }
+            }            
+        }
         return redirect(route('members'));
     }
 
@@ -147,7 +177,7 @@ class DashboardController extends Controller
             return;
         }
 
-        if($member->image !== ''){
+        if($member->image !== '' && $member->image !== 'img/placeholder.png'){
             File::Delete(base_path().'/public/'.$member->image);
         }
 

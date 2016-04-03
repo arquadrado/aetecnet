@@ -1,8 +1,108 @@
-.container-fluid {
-  margin: 100px 100px; }
+body {
+  background-color: #111;
+  color: #9d9d9d; }
+
+.logo-wrapper {
+  width: 300px;
+  height: 230px;
+  margin: auto; }
+  .logo-wrapper svg {
+    width: 100%;
+    height: auto; }
+
+.navbar-inverse {
+  background-color: #111;
+  border-color: #614A4A; }
 
 .row {
-  margin-top: 20px; }
+  margin-bottom: 20px; }
+
+.form-field {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.form-control {
+  background-color: #eee;
+  border-radius: 0;
+  width: 100%;
+  margin: 0 0 20px 0; }
+
+.form-button {
+  background-color: #111;
+  border: 1px solid #614A4A;
+  width: 100px;
+  margin-top: 5px;
+  left: 0;
+  right: 0;
+  transition: 200ms; }
+
+.form-button:hover {
+  background-color: #614A4A;
+  transition: 200ms; }
+
+.container-fluid {
+  margin: 100px 100px; }
+  .container-fluid .item-list .add {
+    color: #9d9d9d;
+    display: block;
+    background-color: #111;
+    border: 1px solid #614A4A;
+    padding: 5px;
+    transition: 200ms;
+    margin-bottom: 20px; }
+  .container-fluid .item-list .add:active {
+    text-decoration: none; }
+  .container-fluid .item-list .add:focus {
+    text-decoration: none; }
+  .container-fluid .item-list .add:hover {
+    text-decoration: none;
+    background-color: #614A4A;
+    transition: 200ms; }
+  .container-fluid .item-list .list-item {
+    color: #9d9d9d;
+    transition: 200ms; }
+    .container-fluid .item-list .list-item .name {
+      font-weight: 700; }
+  .container-fluid .item-list .list-item:hover {
+    text-decoration: none;
+    color: #614A4A; }
+  .container-fluid .item-list .list-item:active {
+    text-decoration: none; }
+  .container-fluid .item-list .list-item:focus {
+    text-decoration: none; }
+  .container-fluid .images .image {
+    float: left;
+    width: 33.3%; }
+    .container-fluid .images .image img {
+      width: 100%;
+      height: auto; }
+  .container-fluid .delete-btn {
+    color: #9d9d9d;
+    display: block;
+    background-color: #111;
+    border: 1px solid #614A4A;
+    padding: 5px;
+    transition: 200ms;
+    margin-bottom: 20px; }
+  .container-fluid .delete-btn:active {
+    text-decoration: none; }
+  .container-fluid .delete-btn:focus {
+    text-decoration: none; }
+  .container-fluid .delete-btn:hover {
+    text-decoration: none;
+    background-color: #614A4A;
+    transition: 200ms; }
+  .container-fluid textarea {
+    width: 100%;
+    height: 200px; }
+
+.member-image img {
+  width: 100px; }
+
+.login {
+  position: relative;
+  width: 300px;
+  margin: auto; }
 
 .multiply-container {
   min-height: 90px;
