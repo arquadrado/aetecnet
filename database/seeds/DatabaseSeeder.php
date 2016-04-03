@@ -46,8 +46,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('categories')->insert([
+            'name' => 'landscape',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
             'name' => 'housing',
             'company_id' => 2
         ]);
+
+        DB::table('categories')->insert([
+            'name' => 'landscape',
+            'company_id' => 2
+        ])
     }
 }
