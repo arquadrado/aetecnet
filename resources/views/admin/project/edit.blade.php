@@ -82,6 +82,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Arquitectura</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="area" value="{{ !is_null($project) ? $project->architecture : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="row">
                              <div class="col-xs-4">

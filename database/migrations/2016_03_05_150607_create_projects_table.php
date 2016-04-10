@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('location');
             $table->string('area');
             $table->string('coordinator');
+            $table->string('architecture');
             $table->string('year');
             $table->text('description');
             $table->string('company');

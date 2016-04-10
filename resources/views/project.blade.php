@@ -18,11 +18,21 @@
                              <div class="row">
                                 <div class="col-sm-4 project-details">
                                     <p><strong>Project: </strong>{{ $project->name }}</p>
+                                    @if($project->client !== '')
                                     <p><strong>Client: </strong>{{ $project->client }}</p>
+                                    @endif
+                                    @if($project->coordinator !== '')
                                     <p><strong>Architecture: </strong>{{ $project->coordinator }}</p>
+                                    @endif
+                                    @if($project->location !== '')
                                     <p><strong>Location: </strong>{{ $project->location }}</p>
+                                    @endif
+                                    @if($project->year !== '')
                                     <p><strong>Project Year: </strong>{{ $project->year }}</p>
+                                    @endif
+                                    @if($project->area !== '')
                                     <p><strong>Area: </strong>{{ $project->area }}</p>
+                                    @endif
                                 </div>
                                 <div class="col-sm-8 description">
                                     <p>{{ $project->description }}</p>

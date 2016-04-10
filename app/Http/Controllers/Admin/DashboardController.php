@@ -72,6 +72,7 @@ class DashboardController extends Controller
         $project->name = $request->name;
         $project->client = $request->client;
         $project->location = $request->location;
+        $project->architecture = $request->architecture;
         $project->area = $request->area;
         $project->coordinator = $request->coordinator;
         $project->year = $request->year;
