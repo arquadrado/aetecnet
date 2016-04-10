@@ -395,7 +395,21 @@
     font-size: 14px;
     width: 300px; }
     .project-info .description {
-      margin-top: 0; } }
+      margin-top: 0; }
+  .project-image {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px; }
+    .project-image img {
+      position: absolute;
+      height: auto;
+      width: 100%;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; } }
 
 @media (min-width: 481px) {
   .logo-wrapper svg {
@@ -448,6 +462,22 @@
     width: 600px; }
     .project-info .description {
       margin-top: 0; } }
+
+@media (min-width: 768px) {
+  .project-image {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px; }
+    .project-image img {
+      position: absolute;
+      height: auto;
+      width: 100%;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; } }
 
 @media (min-width: 961px) {
   .about-wrapper {
