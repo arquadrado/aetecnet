@@ -19,6 +19,71 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Cliente</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="client" value="{{ !is_null($project) ? $project->client : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Localização</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="location" value="{{ !is_null($project) ? $project->location : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Area</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="area" value="{{ !is_null($project) ? $project->area : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Coordenador</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="coordinator" value="{{ !is_null($project) ? $project->coordinator : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <label for="name">Ano</label>
+                                    </div>
+                                </div>
+                                <div class="row form-field">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="year" value="{{ !is_null($project) ? $project->year : '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                              <div class="col-xs-4">
                                 <div class="row form-field">
                                     <div class="col-xs-12">
@@ -38,7 +103,6 @@
                                         </select>
                                     </div>
                                 </div>
-                               
                             </div>
                             <div class="col-xs-4">
                                 <div class="row form-field">
@@ -61,6 +125,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="row">

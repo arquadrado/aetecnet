@@ -313,7 +313,6 @@ $(document).ready(function() {
         //fullpage
 
         var isFirefox = typeof InstallTrigger !== 'undefined';
-
         $('#fullpage').fullpage({
             //Navigation
             lockAnchors: false,
@@ -350,7 +349,7 @@ $(document).ready(function() {
             recordHistory: true,
 
             //Design
-            controlArrows: true,
+            controlArrows: window.innerWidth > 641,
             verticalCentered: true,
             resize: true,
             sectionsColor: ['#222', '#222', '#222', '#222'],

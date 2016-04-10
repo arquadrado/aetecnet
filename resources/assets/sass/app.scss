@@ -409,8 +409,8 @@
 .project-image {
 	position:relative;
 	margin:auto;
-	height: 500px;
-	width: 900px;
+	height: auto;
+	width: 80%;
 	img {
 		position: absolute;
 		width: 100%;
@@ -418,6 +418,7 @@
 		top:0;
 		left:0;
 		right: 0;
+		bottom: 0;
 	}
 }
 
@@ -426,35 +427,6 @@
 	margin:auto;
 	height: 500px;
 	width: 900px;
-	.title{
-		font-size: 22px;
-		margin-top: 50px;
-		margin-bottom: 30px;
-		text-align: center;
-	}
-	.description {
-		font-size: 14px;
-		margin-top: 30px;
-		margin-bottom: 100px;
-		p{
-			text-align: justify;
-		}
-	}
-	.row>* {
-		position: relative;
-	}
-	.image {
-		height: 300px;
-	}
-
-	img {
-		position: absolute;
-		height: 100%;
-		margin: auto;
-		top:0;
-		left:0;
-		right: 0
-	}
 }
 
 /*------- end project page -------*/
@@ -533,10 +505,19 @@
 		}
 	}
 
+	.project-info {
+		margin-top: 30px;
+		font-size: 14px;
+		width: 300px;
+		.project-details {
+		}
+		.description {
+			margin-top: 0;
+		}		
+	}
+
 	.project-image {
-		position:relative;
-		margin:auto;
-		width: 320px;
+			
 	}
 	
 }
@@ -576,10 +557,18 @@
 		width: 400px;
 	}
 
+	.project-info {
+		font-size: 14px;
+		width: 400px;
+		.project-details {
+		}
+		.description {
+			margin-top: 0;
+		}		
+	}
+
 	.project-image {
-		position:relative;
-		margin:auto;
-		width: 481px;
+			
 	}
 
 
@@ -618,10 +607,18 @@
 		}
 	}
 
+	.project-info {
+		font-size: 14px;
+		width: 600px;
+		.project-details {
+		}
+		.description {
+			margin-top: 0;
+		}		
+	}
+
 	.project-image {
-		position:relative;
-		margin:auto;
-		width: 641px;
+			
 	}
 
 }
@@ -669,10 +666,32 @@
 		}
 	}
 
+	.project-info {
+		font-size: 14px;
+		width: 900px;
+		.project-details {
+		}
+		.description {
+			margin-top: 0;
+		}		
+	}
+
 	.project-image {
 		position:relative;
 		margin:auto;
-		width: 961px;
+		height: auto;
+		width: 80%;
+		margin-bottom: 50px;
+		img {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			margin: auto;
+			top:0;
+			left:0;
+			right: 0;
+			bottom: 0;
+		}
 	}
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }

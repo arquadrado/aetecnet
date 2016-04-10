@@ -70,7 +70,12 @@ class DashboardController extends Controller
         }
 
         $project->name = $request->name;
-        //dd($request);
+        $project->client = $request->client;
+        $project->location = $request->location;
+        $project->area = $request->area;
+        $project->coordinator = $request->coordinator;
+        $project->year = $request->year;
+
         $project->description = $request->description;
         $project->category_id = $request->category_id;
         $project->company = $request->company;
@@ -151,7 +156,6 @@ class DashboardController extends Controller
                     $newExperience->institution = $experience['company'];
                     $newExperience->member_id = $member->id;
                     $newExperience->save();
-                    
                 } else {
                     $experienceToEdit = Experience::find($experience['id']);
                     $experienceToEdit->start = $experience['start'];
@@ -162,6 +166,14 @@ class DashboardController extends Controller
                 }
             }            
         }
+        
+        if(!is_null(request('experiencesToDelete'))){
+            foreach (request('experiencesToDelete') as $experienceId) {
+                Experience::destroy($experienceId);
+            }
+        }
+            
+
         return redirect(route('members'));
     }
 

@@ -318,43 +318,22 @@
 .project-image {
   position: relative;
   margin: auto;
-  height: 500px;
-  width: 900px; }
+  height: auto;
+  width: 80%; }
   .project-image img {
     position: absolute;
     width: 100%;
     margin: auto;
     top: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    bottom: 0; }
 
 .project-info {
   position: relative;
   margin: auto;
   height: 500px;
   width: 900px; }
-  .project-info .title {
-    font-size: 22px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    text-align: center; }
-  .project-info .description {
-    font-size: 14px;
-    margin-top: 30px;
-    margin-bottom: 100px; }
-    .project-info .description p {
-      text-align: justify; }
-  .project-info .row > * {
-    position: relative; }
-  .project-info .image {
-    height: 300px; }
-  .project-info img {
-    position: absolute;
-    height: 100%;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0; }
 
 /*------- end project page -------*/
 @media (min-width: 320px) {
@@ -410,10 +389,12 @@
     color: #eee;
     font-family: 'Maven Pro', sans-serif;
     font-size: 9px; }
-  .project-image {
-    position: relative;
-    margin: auto;
-    width: 320px; } }
+  .project-info {
+    margin-top: 30px;
+    font-size: 14px;
+    width: 300px; }
+    .project-info .description {
+      margin-top: 0; } }
 
 @media (min-width: 481px) {
   .logo-wrapper svg {
@@ -437,10 +418,11 @@
       width: 30%; }
   .project-wrapper {
     width: 400px; }
-  .project-image {
-    position: relative;
-    margin: auto;
-    width: 481px; } }
+  .project-info {
+    font-size: 14px;
+    width: 400px; }
+    .project-info .description {
+      margin-top: 0; } }
 
 @media (min-width: 641px) {
   .logo-wrapper svg {
@@ -460,10 +442,11 @@
     color: #eee;
     font-family: 'Maven Pro', sans-serif;
     font-size: 14px; }
-  .project-image {
-    position: relative;
-    margin: auto;
-    width: 641px; } }
+  .project-info {
+    font-size: 14px;
+    width: 600px; }
+    .project-info .description {
+      margin-top: 0; } }
 
 @media (min-width: 961px) {
   .about-wrapper {
@@ -493,9 +476,25 @@
     color: #eee;
     font-family: 'Maven Pro', sans-serif;
     font-size: 14px; }
+  .project-info {
+    font-size: 14px;
+    width: 900px; }
+    .project-info .description {
+      margin-top: 0; }
   .project-image {
     position: relative;
     margin: auto;
-    width: 961px; } }
+    height: auto;
+    width: 80%;
+    margin-bottom: 50px; }
+    .project-image img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; } }
 
 /*# sourceMappingURL=app.css.map */

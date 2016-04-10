@@ -4,9 +4,6 @@
 @include('partials.header-projects')
 
 <div id="fullpage">
-
-            
-
             <div class="section" id="section2">
                 <div class="slide-container">
                 @foreach($categories as $category => $projects)
