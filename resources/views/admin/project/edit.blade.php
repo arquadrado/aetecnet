@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="row form-field">
                                     <div class="col-xs-12">
-                                        <input class="form-control" name="area" value="{{ !is_null($project) ? $project->architecture : '' }}">
+                                        <input class="form-control" name="architecture" value="{{ !is_null($project) ? $project->architecture : '' }}">
                                     </div>
                                 </div>
                             </div>
