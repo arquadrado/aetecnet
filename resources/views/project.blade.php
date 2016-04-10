@@ -22,7 +22,10 @@
                                     <p><strong>Client: </strong>{{ $project->client }}</p>
                                     @endif
                                     @if($project->coordinator !== '')
-                                    <p><strong>Architecture: </strong>{{ $project->coordinator }}</p>
+                                    <p><strong>Coordinator: </strong>{{ $project->coordinator }}</p>
+                                    @endif
+                                    @if($project->coordinator !== '')
+                                    <p><strong>Architecture: </strong>{{ $project->architecture }}</p>
                                     @endif
                                     @if($project->location !== '')
                                     <p><strong>Location: </strong>{{ $project->location }}</p>
