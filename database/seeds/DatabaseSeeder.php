@@ -49,5 +49,40 @@ class DatabaseSeeder extends Seeder
             'name' => 'landscape',
             'company_id' => 1
         ]);
+
+        DB::table('categories')->insert([
+            'name' => 'architectural renovation',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'industrial',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'public',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'interior design',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'transport',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'competions',
+            'company_id' => 1
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'housing',
+            'company_id' => 2
+        ]);
     }
 }

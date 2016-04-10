@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Member;
 use App\Project;
 use App\Category;
+use App\Company;
 use App\Http\Controllers\Controller;
 
 class FrontEndController extends Controller
@@ -73,7 +74,13 @@ class FrontEndController extends Controller
 
     public function prepareProjects($company)
     {
-        $categories = Category::all();
+        $companies = $this->getCompanies();
+        foreach ($companies as $db_company) {
+            if($db_company['slug'] === $company){
+                $currentCompany = Company::where('name', $db_company['name'])->first();
+            }
+        }
+        $categories = Category::where('company_id', $currentCompany->id )->get();
         $data = [];
 
         foreach ($categories as $category) {
