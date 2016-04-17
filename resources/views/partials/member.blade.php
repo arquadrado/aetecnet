@@ -1,8 +1,7 @@
 <div class="col-sm-12 col-md-4 member-wrapper">
 	<div class="row">
 		<div class="col-xs-4">
-			<div class="member-thumbnail">
-				<img src="{{ $member->image }}" alt="">
+			<div class="member-thumbnail" style="background-image: url('{{ $member->image }}')">
 			</div>
 		</div>
 		<div class="col-xs-8">
