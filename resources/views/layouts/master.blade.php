@@ -12,13 +12,8 @@
         <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
         <link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
         
-        <script type="text/javascript" src="{!! asset('js/jquery-2.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/jquery.fullPage.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/bootstrap.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('js/jquery.slimscroll.min.js') !!}"></script>
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
-        <script type="text/javascript" src="{!! asset('js/suplements.js') !!}"></script>
+
+        <script type="text/javascript" src="{!! asset('js/reqs.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
     </head>
     <body>

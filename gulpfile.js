@@ -17,8 +17,16 @@ elixir(function(mix) {
 });
 
 elixir(function(mix) {
-    mix.scripts(['app.js'], 'public/js/app.js')
-       .scripts([
+    mix.scripts([
+	    	'reqs/jquery.js',
+	    	'reqs/full-page.js',
+	    	'reqs/full-page-slim-scroll.js',
+	    	'reqs/bootstrap.js',
+	    	'reqs/maps.js',
+	    	'reqs/masonry.js'
+	    	], 'public/js/reqs.js')
+    	.scripts(['app.js'], 'public/js/app.js')
+        .scripts([
        		'reqs/multiply.js',
        		'admin/admin.js'], 'public/js/admin.js');
 });
