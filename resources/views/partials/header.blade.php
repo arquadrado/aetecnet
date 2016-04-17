@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#firstPage">AETEC-MO</a>
+            <a class="navbar-brand" href="#firstPage">AETECNET</a>
         </div>
         <div id="navHeaderCollapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

@@ -168,7 +168,8 @@
 .slide-navigation {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  text-transform: uppercase; }
   .slide-navigation ul {
     list-style-type: none; }
     .slide-navigation ul li {
