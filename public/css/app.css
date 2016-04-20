@@ -1,14 +1,14 @@
 /*-------navbar-------*/
 .navbar-inverse {
-  border-bottom: 1px solid #614A4A; }
+  border-bottom: 1px solid #614A4A;
+  background-color: rgba(2, 2, 2, 0.5); }
   .navbar-inverse .navbar-nav > .active > a,
   .navbar-inverse .navbar-nav > .active > a:focus,
   .navbar-inverse .navbar-nav > .active > a:hover {
-    background-color: #614A4A; }
+    background-color: transparent; }
   .navbar-inverse .navbar-brand {
     font-family: 'Roboto', sans-serif;
-    font-size: 3em;
-    font-weight: bold; }
+    font-size: 3em; }
   .navbar-inverse .navbar-collapse a {
     font-family: 'Roboto', sans-serif;
     font-size: 1.6em; }
@@ -32,6 +32,23 @@
   border-color: transparent transparent transparent #888; }
 
 /*-------navigations-arrows end-------*/
+/*------ landing page -------*/
+#section0 {
+  padding-top: 0 !important;
+  height: 100% !important; }
+
+#landing-slide {
+  height: 100%; }
+
+.cover-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+/*------- end landing page -------*/
 .red {
   height: 200px;
   width: 100%;
@@ -168,7 +185,7 @@
 .slide-navigation {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase; }
   .slide-navigation ul {
     list-style-type: none; }
@@ -342,6 +359,8 @@
 
 /*------- end project page -------*/
 @media (min-width: 320px) {
+  .slide-navigation {
+    display: none; }
   .logo-wrapper {
     position: relative; }
     .logo-wrapper svg {

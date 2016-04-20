@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'competions',
+            'name' => 'competitions',
             'company_id' => 1
         ]);
 

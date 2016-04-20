@@ -8,7 +8,7 @@
 			</div>
 			<div class="col-md-9">
 				<div class="info-wrapper">
-					<p><strong>MARIA JOSÉ DE FREITAS, ARCHITECT</strong></p>
+					<p><strong>MARIA JOSÉ DE FREITAS, ARCHITECT, CEO</strong></p>
 					<p>Architect, graduated at the Superior School of Architecture in Lisbon, Portugal.</p>
 					<p>Founding shareholder and manager of “AETEC-MO Architecture and Engineering, Ltd”, in Macau,
 					SAR China, 1990/2015</p>

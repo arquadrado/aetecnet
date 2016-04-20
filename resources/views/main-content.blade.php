@@ -5,8 +5,21 @@
 
 <div id="fullpage">
 
-            <div class="section " id="section0">
-                @include('partials.landing')
+            <div class="section landing" id="section0">
+                 <div class="slide-container" id="landing-slide">
+                    <div class="slide" id="slide1">
+                        <div class="cover-image" style="background-image: url('img/image1-logo.jpg')"></div>
+                    </div>
+                    <div class="slide" id="slide2">
+                         <div class="cover-image" style="background-image: url('img/image2.jpg')"></div>    
+                    </div>
+                    <div class="slide" id="slide3">
+                       <div class="cover-image" style="background-image: url('img/image3.jpg')"></div> 
+                    </div>
+                    <div class="slide" id="slide4">
+                       <div class="cover-image" style="background-image: url('img/image4.jpg')"></div> 
+                    </div>
+                </div>
             </div>
 
             <div class="section" id="section1">
