@@ -359,8 +359,6 @@
 
 /*------- end project page -------*/
 @media (min-width: 320px) {
-  .slide-navigation {
-    display: none; }
   .logo-wrapper {
     position: relative; }
     .logo-wrapper svg {
